@@ -20,10 +20,10 @@ public class LoginBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	
-	private Usuario usuario;
+	private Usuario usuario = new Usuario();
 	
 	
-	private UsuarioDao dao;
+	private UsuarioDao dao = new UsuarioDao();
 	
 	public Usuario getUsuario() {
 		return this.usuario;

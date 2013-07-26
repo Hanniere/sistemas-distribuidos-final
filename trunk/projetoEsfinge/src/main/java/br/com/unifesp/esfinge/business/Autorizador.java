@@ -14,6 +14,11 @@ public class Autorizador implements PhaseListener{
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
 
 	
 	public void afterPhase(PhaseEvent event) {
