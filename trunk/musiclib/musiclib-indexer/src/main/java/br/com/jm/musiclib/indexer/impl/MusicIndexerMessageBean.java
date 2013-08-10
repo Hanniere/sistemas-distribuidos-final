@@ -15,7 +15,7 @@ import br.com.jm.musiclib.indexer.MusicIndexer;
  * Message-Driven Bean que inicia o processo de indexação.
  * 
  */
-@MessageDriven(mappedName = "queue/musicIndexerQueue")
+
 public class MusicIndexerMessageBean implements MessageListener {
   /** Log */
   private Logger log = Logger.getLogger("br.com.jm.musiclib.indexer");

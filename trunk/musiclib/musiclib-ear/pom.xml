@@ -6,7 +6,7 @@
 	
 	<packaging>ear</packaging>	
 
-	<name>musiclib-ear</name>
+	<name>musiclib</name>
   	<parent>
 	    <groupId>br.com.jm.musiclib</groupId>
     	<artifactId>musiclib-app</artifactId>
@@ -43,7 +43,7 @@
 		        		<webModule>
                				<groupId>br.com.jm.musiclib</groupId>
                				<artifactId>musiclib-web</artifactId>
-               				<contextRoot>/musiclib-web</contextRoot>
+               				<contextRoot>/projetoEsfinge</contextRoot>
              			</webModule>
           			</modules>
 		        </configuration>

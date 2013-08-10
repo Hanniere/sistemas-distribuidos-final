@@ -1,5 +1,6 @@
 package br.com.jm.musiclib.web;
 
+import java.io.Serializable;
 import java.util.logging.Logger;
 
 import javax.annotation.Resource;
@@ -24,7 +25,7 @@ import javax.jms.TextMessage;
 
 @Named
 @SessionScoped
-public class IndexerBean {
+public class IndexerBean implements Serializable{
 
   /** Log */
   private Logger log = Logger.getLogger("br.com.jm.musiclib.web");
