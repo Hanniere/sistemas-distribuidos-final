@@ -11,14 +11,14 @@
 				<h:panelGrid columns="2" syleClass="campos">
 					
 					<h:outputLabel value="Login:" />
-					<h:inputText value="#{loginBean.usuario.login}" />
+					<h:inputText value="#{userBean.currentUser.login}" />
 					
 					<h:outputLabel value="Senha:" />
-					<h:inputSecret value="#{loginBean.usuario.senha}" />
+					<h:inputSecret value="#{userBean.currentUser.password}" />
 					
 				
 				</h:panelGrid>
-				<h:commandButton value="Efetuar Login" action ="#{loginBean.efetuaLogin}" />
+				<h:commandButton value="Efetuar Login" action ="#{userBean.login}" />
 			</h:form>
 		</ui:define>
 	</ui:composition>
