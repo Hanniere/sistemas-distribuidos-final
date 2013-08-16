@@ -13,7 +13,6 @@ import br.com.jm.musiclib.indexer.impl.MusicIndexerImpl;
 /**
  * Bean que guarda a última música encontrada pelo indexador de músicas.
  * 
- * @author Paulo Sigrist / Wilson A. Higashino
  * 
  */
 @SessionScoped
@@ -23,7 +22,7 @@ public class StatusBean implements Serializable {
    */
   private static final long serialVersionUID = 6445790885225082845L;
   /**
-   * Referência para a última música encontrada
+   * Referência para a última questão encontrada
    */
   private MusicInfo currentMusicInfo;
 
@@ -34,7 +33,7 @@ public class StatusBean implements Serializable {
 
   /**
    * Recebe um evento do tipo MusicIndexerEvent disparado pelo MusicIndexer.
-   * Salva a referência da música encontrada e marca se o precesso foi
+   * Salva a referência da questão encontrada e marca se o precesso foi
    * finalizado.
    * 
    * @param event
@@ -48,14 +47,14 @@ public class StatusBean implements Serializable {
   }
 
   /**
-   * @return a música atual. Null se não existe.
+   * @return a questão atual. Null se não existe.
    */
   public MusicInfo getCurrentMusicInfo() {
     return currentMusicInfo;
   }
 
   /**
-   * Altera a música atual
+   * Altera a questão atual
    * 
    * @param currentMusicInfo
    */
@@ -64,35 +63,35 @@ public class StatusBean implements Serializable {
   }
 
   /**
-   * @return o título da música atual ou vazio se não existe
+   * @return o título da questão atual ou vazio se não existe
    */
   public String getTitle() {
     return currentMusicInfo == null ? "" : currentMusicInfo.getTitle();
   }
 
   /**
-   * @return o artista da música atual ou vazio se não existe
+   * @return o autor da questão atual ou vazio se não existe
    */
   public String getArtist() {
     return currentMusicInfo == null ? "" : currentMusicInfo.getArtist();
   }
 
   /**
-   * @return o album da música atual ou vazio se não existe
+   * @return o a instituição do autor da questão atual ou vazio se não existe
    */
   public String getAlbum() {
     return currentMusicInfo == null ? "" : currentMusicInfo.getAlbum();
   }
 
   /**
-   * @return o nome do arquivo da música atual ou vazio se não existe
+   * @return o nome do arquivo da questão atual ou vazio se não existe
    */
   public String getFileName() {
     return currentMusicInfo == null ? "" : currentMusicInfo.getFileName();
   }
 
   /**
-   * @return a faixa da música atual ou vazio se não existe
+   * @return a faixa da questão atual ou vazio se não existe
    */
   public String getTrackNumber() {
     return currentMusicInfo == null ? "" : currentMusicInfo.getTrackNumber();

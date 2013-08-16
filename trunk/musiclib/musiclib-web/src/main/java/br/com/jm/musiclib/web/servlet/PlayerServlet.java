@@ -17,7 +17,7 @@ import br.com.jm.musiclib.model.MusicService;
 import br.com.jm.musiclib.web.Player;
 
 /**
- * Servlet responsável por fazer o stream da música
+ * Servlet responsável por fazer o stream da questão
  */
 @WebServlet(name = "Player", urlPatterns = { "/Player" })
 public class PlayerServlet extends HttpServlet {
@@ -44,9 +44,9 @@ public class PlayerServlet extends HttpServlet {
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    // Obtem a musica atual do servlet
+    // Obtem a questão atual do servlet
     Music music = player.getCurrentMusic();
-    // Pega os bytes da música
+    // Pega os bytes da questão
     MusicFile file = musicService.getMusicFile(music.getFileId());
     // Informa que estamos mandando um audio/mp3
     response.setContentType("audio/mp3");

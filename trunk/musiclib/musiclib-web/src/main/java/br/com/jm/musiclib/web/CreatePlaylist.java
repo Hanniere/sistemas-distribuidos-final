@@ -17,7 +17,6 @@ import br.com.jm.musiclib.model.UserService;
 /**
  * Bean responsável por criar a playlist.
  * 
- * @author Paulo Sigrist / Wilson A. Higashino
  * 
  */
 @ConversationScoped
@@ -55,9 +54,9 @@ public class CreatePlaylist implements Serializable {
 
   /** Nome da playlist */
   private String name;
-  /** Campo de busca de música */
+  /** Campo de busca de questão */
   private String searchValue;
-  /** Lista de músicas selecionadas */
+  /** Lista de questões selecionadas */
   private List<Music> selectedMusics;
   /** Lista do resultado de busca */
   private List<Music> searchResults;

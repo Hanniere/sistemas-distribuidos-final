@@ -14,8 +14,7 @@ import br.com.jm.musiclib.model.UserService;
 /**
  * Bean reponsável pela criação de novos usuários e pela autenticação dos já
  * existentes
- * 
- * @author Paulo Sigrist / Wilson A. Higashino
+ *
  */
 @SessionScoped
 @Named

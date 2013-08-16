@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.jm.musiclib.model.Comment;
+import br.com.jm.musiclib.model.Resposta;
 import br.com.jm.musiclib.model.Music;
 import br.com.jm.musiclib.model.MusicService;
 import br.com.jm.musiclib.model.Playlist;
@@ -19,7 +20,6 @@ import br.com.jm.musiclib.model.UserService;
 /**
  * Bean responsável por gerenciar o Player.
  * 
- * @author Paulo Sigrist / Wilson A. Higashino
  * 
  */
 @Named
@@ -60,17 +60,22 @@ public class Player implements Serializable {
    */
   private Playlist currentPlaylist;
   /**
-   * Lista de músicas da playlist selecionada
+   * Lista de questões da playlist selecionada
    */
   private List<Music> musics;
   /**
-   * Música que está tocando.
+   * Áudio que está tocando.
    */
   private Music currentMusic;
   /**
    * Novo comentário que pode ser adicionado pelo usuário
    */
   private Comment comment = new Comment();
+  
+  /**
+   * Nova resposta que pode ser adicionado pelo usuário
+   */
+  private Resposta resposta = new Resposta();
 
   /**
    * @return o nome da playlist selecionada
@@ -98,7 +103,7 @@ public class Player implements Serializable {
 
   /**
    * 
-   * @return a música atual.
+   * @return a questão atual.
    */
   public Music getCurrentMusic() {
     return currentMusic;
@@ -180,6 +185,20 @@ public class Player implements Serializable {
     musicService.addComment(currentMusic, comment);
     comment = new Comment();
   }
+  
+  /**
+   * Salva uma resposta dada pelo usuário
+   * 
+   * @see MusicService#addComment(Music, Comment)
+   */
+  public void saveResposta() {
+    comment.setUserName(user.getCurrentUser().getName());
+    comment.setPostDate(new Date());
+    currentMusic.addResposta(resposta);
+
+    musicService.addResposta(currentMusic, resposta);
+    comment = new Comment();
+  }
 
   /**
    * 
@@ -196,6 +215,23 @@ public class Player implements Serializable {
    */
   public void setComment(Comment comment) {
     this.comment = comment;
+  }
+  
+  /**
+   * 
+   * @return o objeto resposta
+   */
+  public Resposta getResposta() {
+    return resposta;
+  }
+
+  /**
+   * Altera o objeto resposta
+   * 
+   * @param comment
+   */
+  public void setResposta(Resposta comment) {
+    this.resposta = comment;
   }
 
 }

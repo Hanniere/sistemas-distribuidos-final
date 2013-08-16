@@ -15,7 +15,6 @@ import br.com.jm.musiclib.web.StatusBean;
  * Bean responsável por monitorar o andamento da indexação e atualizar o status
  * para o usuário. Verifica o bean StatusBean para obter as informações.
  * 
- * @author Paulo Sigrist / Wilson A. Higashino
  * 
  * @see StatusBean
  * 
@@ -36,15 +35,15 @@ public class AjaxStatusBean implements Serializable {
    */
   @Inject
   private StatusBean bean;
-  /** Título da música indexada */
+  /** Título da questão indexada */
   private String title;
-  /** Album da música indexada */
+  /** Instituição da questão indexada */
   private String album;
-  /** Artista da música indexada */
+  /** Autor da questão indexada */
   private String artist;
-  /** Nome do arquivo da música indexada */
+  /** Nome do arquivo da questão indexada */
   private String fileName;
-  /** Faixa da música indexada */
+  /** Faixa da questão indexada */
   private String trackNumber;
 
   /**

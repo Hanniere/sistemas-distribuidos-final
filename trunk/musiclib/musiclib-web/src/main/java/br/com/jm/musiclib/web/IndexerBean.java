@@ -15,14 +15,12 @@ import javax.jms.QueueSession;
 import javax.jms.TextMessage;
 
 /**
- * Bean responsável por indexar as músicas. Como entrada, esse bean recebe uma
+ * Bean responsável por indexar as questões. Como entrada, esse bean recebe uma
  * pasta que se encontra no servidor e envia essa configuração para uma fila
  * JMS, onde será consumida pelo indexador.
  * 
- * @author Paulo Sigrist / Wilson A. Higashino
  * 
  */
-
 @Named
 @SessionScoped
 public class IndexerBean implements Serializable{
@@ -42,7 +40,7 @@ public class IndexerBean implements Serializable{
 
   /** Construtor padrão. */
   public IndexerBean() {
-    setFolder("C:/Users/Public/Music");
+    setFolder("C:/Users");
   }
 
   /**
