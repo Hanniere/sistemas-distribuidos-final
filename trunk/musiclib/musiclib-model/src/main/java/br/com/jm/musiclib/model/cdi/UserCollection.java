@@ -9,7 +9,6 @@ import javax.inject.Qualifier;
 
 /**
  * Qualificador CDI - qualifica objetos DBCollection como coleções de usuários.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)

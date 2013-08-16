@@ -14,7 +14,6 @@ import br.com.jm.musiclib.model.Playlist;
 
 /**
  * Implementação do Converter para objetos do tipo Playlist.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 @ApplicationScoped
 public class PlaylistConverter implements Converter<Playlist> {

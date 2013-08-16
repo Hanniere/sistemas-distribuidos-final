@@ -9,7 +9,6 @@ import br.com.jm.musiclib.model.MusicFile;
 
 /**
  * Implementação do Converter para objetos do tipo MusicaFile.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 @ApplicationScoped
 public class MusicFileConverter implements Converter<MusicFile> {

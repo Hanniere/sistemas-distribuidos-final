@@ -14,25 +14,29 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 
 import br.com.jm.musiclib.model.Comment;
+import br.com.jm.musiclib.model.Resposta;
 import br.com.jm.musiclib.model.Music;
 
 /**
  * Implementação do Converter para objetos do tipo Music.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 @ApplicationScoped
 public class MusicConverter implements Converter<Music> {
 
   /** Conversor para objetos Comment. */
   private Converter<Comment> commentConv;
+  
+  /** Conversor para objetos Resposta. */
+  private Converter<Resposta> respostaConv;
 
   /**
    * Construtor.
    * @param commentConverter Conversor de objetos Comment. Injetado pelo CDI.
    */
   @Inject
-  public MusicConverter(Converter<Comment> commentConverter) {
+  public MusicConverter(Converter<Comment> commentConverter, Converter<Resposta> respConverter) {
     this.commentConv = commentConverter;
+    this.respostaConv = respConverter;
   }
 
   /** Construtor sem parâmetros - necessário para o CDI. */
@@ -63,6 +67,12 @@ public class MusicConverter implements Converter<Music> {
       comentariosList.add(commentConv.toDBObject(comentario));
     }
     doc.put("comments", comentariosList);
+    
+    BasicDBList respostasList = new BasicDBList();
+    for (Resposta comentario : music.getRespostas()) {
+      comentariosList.add(respostaConv.toDBObject(comentario));
+    }
+    doc.put("respostas", comentariosList);
 
     return doc;
   }
@@ -74,10 +84,18 @@ public class MusicConverter implements Converter<Music> {
 
     List<DBObject> commentDocs = (List<DBObject>) doc.get("comments");
     SortedSet<Comment> comments = new TreeSet<Comment>();
+    
+    List<DBObject> respDocs = (List<DBObject>) doc.get("respostas");
+    SortedSet<Resposta> respostas = new TreeSet<Resposta>();
+    
     String fileId;
 
     for (DBObject commentDoc : commentDocs) {
       comments.add(commentConv.toObject(commentDoc));
+    }
+    
+    for (DBObject respDoc : respDocs) {
+      respostas.add(respostaConv.toObject(respDoc));
     }
 
     if (doc.get("fileId") != null) {
@@ -90,7 +108,7 @@ public class MusicConverter implements Converter<Music> {
     Music music = new Music(((ObjectId) doc.get("_id")).toString(),
         (Integer) doc.get("trackNumber"), (String) doc.get("title"),
         (String) doc.get("artistName"), (String) doc.get("albumName"), fileId,
-        (List<String>) doc.get("tags"), comments);
+        (List<String>) doc.get("tags"), comments, respostas);
 
     return music;
   }

@@ -1,5 +1,6 @@
 package br.com.jm.musiclib.model.impl;
 
+import br.com.jm.musiclib.model.Comment;
 import java.net.UnknownHostException;
 
 import org.junit.BeforeClass;
@@ -9,6 +10,8 @@ import br.com.jm.musiclib.model.Music;
 import br.com.jm.musiclib.model.Playlist;
 import br.com.jm.musiclib.model.User;
 import br.com.jm.musiclib.model.converter.CommentConverter;
+import br.com.jm.musiclib.model.converter.Converter;
+import br.com.jm.musiclib.model.converter.RespostaConverter;
 import br.com.jm.musiclib.model.converter.MusicConverter;
 import br.com.jm.musiclib.model.converter.PlaylistConverter;
 import br.com.jm.musiclib.model.converter.UserConverter;
@@ -29,8 +32,10 @@ public class UsuarioServiceTest {
 		musicService.musicsColl = mongo.getMusicCollection();
 
 		CommentConverter commentConv = new CommentConverter();
-		MusicConverter musicConv = new MusicConverter(commentConv);
-		musicService.commentConv = commentConv;
+                RespostaConverter respostConv = new RespostaConverter();
+		MusicConverter musicConv = new MusicConverter((Converter<Comment>)commentConv, respostConv);
+		musicService.commentConv = (Converter<Comment>) commentConv;
+                musicService.respostaConv = respostConv;
 		musicService.musicConv = musicConv;
 		
 		userService = new UserServiceBean();

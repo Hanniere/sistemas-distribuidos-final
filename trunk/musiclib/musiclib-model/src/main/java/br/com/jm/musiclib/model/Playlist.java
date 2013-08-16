@@ -6,7 +6,6 @@ import java.util.List;
 
 /**
  * Classe que representa uma playlist de um usuário.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 public class Playlist implements Serializable {
 
@@ -18,7 +17,7 @@ public class Playlist implements Serializable {
   /** Nome da playlist. */
   private String name;
 
-  /** Lista de identificadores de músicas pertencentes à playlist. */
+  /** Lista de identificadores de questões pertencentes à playlist. */
   private List<String> musics;
 
   /**
@@ -32,7 +31,7 @@ public class Playlist implements Serializable {
   /**
    * Construtor.
    * @param name Nome da playlist.
-   * @param musics Lista de identificadores das músicas que pertencem
+   * @param musics Lista de identificadores das questões que pertencem
    * à playlist.
    */
   public Playlist(String name, List<String> musics) {
@@ -41,8 +40,8 @@ public class Playlist implements Serializable {
   }
 
   /**
-   * Obtém a lista de identificadres das músicas da playlist.
-   * @return lista de identificadres das músicas da playlist.
+   * Obtém a lista de identificadres das questões da playlist.
+   * @return lista de identificadres das questões da playlist.
    */
   public List<String> getMusics() {
     return this.musics;
@@ -57,8 +56,8 @@ public class Playlist implements Serializable {
   }
 
   /**
-   * Adiciona uma nova música à playlist.
-   * @param music Música a ser adicionada.
+   * Adiciona uma nova questão à playlist.
+   * @param music Questão a ser adicionada.
    */
   public void addMusic(Music music) {
     this.musics.add(music.getId());

@@ -8,8 +8,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
- * Classe que representa uma música da aplicação.
- * @author Paulo Sigrist / Wilson A. Higashino
+ * Classe que representa uma questão em áudio da aplicação.
  */
 public class Music implements Serializable {
 
@@ -18,19 +17,19 @@ public class Music implements Serializable {
    */
   private static final long serialVersionUID = -3471296001691844288L;
 
-  /** Identificador interno da música. */
+  /** Identificador interno da questão. */
   private String id;
 
-  /** Número da faixa (dentro do álbum). */
+  /** Número da questão. */
   private int trackNumber;
 
-  /** Nome da música. */
+  /** Nome da questão. */
   private String title;
 
-  /** Nome do artista. */
+  /** Autor da questão. */
   private String artistName;
 
-  /** Nome do álbum. */
+  /** Nome da instituição. */
   private String albumName;
 
   /** Indentificador para o arquivo. */
@@ -39,40 +38,44 @@ public class Music implements Serializable {
   /** Lista de tags associadas à música. */
   private List<String> tags;
 
-  /** Conjunto de comentários associados à música. */
+  /** Conjunto de comentários associados à questão. */
   private SortedSet<Comment> comments;
+  
+  /** Conjunto de respostas associadas à questão. */
+  private SortedSet<Resposta> respostas;
 
   /**
    * Construtor.
-   * @param trackNumber Número da faixa.
-   * @param title Nome da música.
-   * @param artistName Nome do artista.
-   * @param albumName Nome do álbum.
+   * @param trackNumber Número da questão.
+   * @param title Nome da questão.
+   * @param artistName Nome do autor.
+   * @param albumName Nome da instituição.
    * @param fileId Identificador para o arquivo.
-   * @param tag Uma tag para a música.
+   * @param tag Uma tag para a questão.
    */
   public Music(int trackNumber, String title, String artistName,
       String albumName, String fileId, String tag)
   {
     this(null, trackNumber, title, artistName, albumName, fileId, Collections
-        .singletonList(tag), new TreeSet<Comment>());
+        .singletonList(tag), new TreeSet<Comment>(), new TreeSet<Resposta>());
   }
 
   /**
    * Construtor com todos os atributos.
    * 
-   * @param id Identificador interno da música.
-   * @param trackNumber Número da faixa.
-   * @param title Nome da música.
-   * @param artistName Nome do artista.
-   * @param albumName Nome do álbum.
+   * @param id Identificador interno da questão.
+   * @param trackNumber Número da questão.
+   * @param title Nome da questão.
+   * @param artistName Nome do autor.
+   * @param albumName Nome da instituição.
    * @param fileId Identificador para o arquivo.
-   * @param tags Lista de tags associadas à música.
-   * @param comments Conjunto de comentários associados à música.
+   * @param tags Lista de tags associadas à questão.
+   * @param comments Conjunto de comentários associados à questão.
+   * @param respostas Conjunto de respostas associados à questão.
    */
   public Music(String id, int trackNumber, String title, String artistName,
       String albumName, String fileId, List<String> tags,
-      SortedSet<Comment> comments)
+      SortedSet<Comment> comments, SortedSet<Resposta> respostas)
   {
     this.id = id;
     this.trackNumber = trackNumber;
@@ -82,59 +85,60 @@ public class Music implements Serializable {
     this.fileId = fileId;
     this.tags = new ArrayList<String>(tags);
     this.comments = comments;
+    this.respostas = respostas;
   }
 
   /**
-   * Obtém identificador interno da música.
-   * @return identificador interno da música.
+   * Obtém identificador interno da questão.
+   * @return identificador interno da questão.
    */
   public String getId() {
     return this.id;
   }
 
   /**
-   * Obtém número da faixa.
-   * @return número da faixa.
+   * Obtém número da questão.
+   * @return número da questão.
    */
   public int getTrackNumber() {
     return trackNumber;
   }
 
   /**
-   * Obtém título da música.
-   * @return Título da música.
+   * Obtém título da questão.
+   * @return Título da questão.
    */
   public String getTitle() {
     return this.title;
   }
 
   /**
-   * Obtém nome do artista.
-   * @return Nome do artista.
+   * Obtém nome da questão.
+   * @return Nome da questão.
    */
   public String getArtistName() {
     return this.artistName;
   }
 
   /**
-   * Obtém nome do álbum.
-   * @return Nome do álbum.
+   * Obtém nome da instituição.
+   * @return Nome da instituição.
    */
   public String getAlbumName() {
     return this.albumName;
   }
 
   /**
-   * Obtém lista de tags associadas à música.
-   * @return lista de tags associadas à música.
+   * Obtém lista de tags associadas à questão.
+   * @return lista de tags associadas à questão.
    */
   public List<String> getTags() {
     return this.tags;
   }
 
   /**
-   * Obtém conjunto de comentários associados à música.
-   * @return conjunto de comentários associados à música.
+   * Obtém conjunto de comentários associados à questão.
+   * @return conjunto de comentários associados à questão.
    */
   public SortedSet<Comment> getComments() {
     return this.comments;
@@ -158,20 +162,38 @@ public class Music implements Serializable {
   }
 
   /**
-   * Configura o identificador interno da música.
-   * @param id identificador interno da música.
+   * Configura o identificador interno da questão.
+   * @param id identificador interno da questão.
    */
   public void setId(String id) {
     this.id = id;
   }
 
   /**
-   * Adiciona uma nova tag ao conjunto de tags da música.
+   * Adiciona uma nova tag ao conjunto de tags da questão.
    * @param tag Nova tag a ser adicionada.
    */
   public void addTag(String tag) {
     this.tags.add(tag);
   }
+  
+  /**
+   * Obtém conjunto de respostas associados à questão.
+   * @return conjunto de respostas associados à questão.
+   */
+  public SortedSet<Resposta> getRespostas() {
+    return this.respostas;
+  }
+
+  /**
+   * @return o conjunto de respostas como uma lista.
+   * 
+   * @see #getComments()
+   */
+  public List<Resposta> getRespostasAsList() {
+    return new ArrayList<Resposta>(getRespostas());
+  }
+
 
   /**
    * Adiciona novo comentário ao conjunto de comentários associados.
@@ -179,6 +201,14 @@ public class Music implements Serializable {
    */
   public void addComment(Comment comment) {
     this.comments.add(comment);
+  }
+  
+  /**
+   * Adiciona novo comentário ao conjunto de respostas associadas.
+   * @param comment Comentário a ser adicionado.
+   */
+  public void addResposta(Resposta comment) {
+    this.respostas.add(comment);
   }
 
 }

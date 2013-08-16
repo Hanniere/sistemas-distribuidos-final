@@ -4,8 +4,7 @@ import java.io.InputStream;
 import java.io.Serializable;
 
 /**
- * Classe que representa o arquivo que contém os dados binários de uma música.
- * @author Paulo Sigrist / Wilson A. Higashino
+ * Classe que representa o arquivo que contém os dados binários de uma questão.
  */
 public class MusicFile implements Serializable {
 

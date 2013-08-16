@@ -8,8 +8,7 @@ import java.lang.annotation.Target;
 import javax.inject.Qualifier;
 
 /**
- * Qualificador CDI - qualifica objetos DBCollection como coleções de músicas.
- * @author Paulo Sigrist / Wilson A. Higashino
+ * Qualificador CDI - qualifica objetos DBCollection como coleções de questões.
  */
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)

@@ -15,8 +15,11 @@ import org.junit.Test;
 import br.com.jm.musiclib.indexer.MusicIndexerEvent;
 import br.com.jm.musiclib.indexer.MusicInfo;
 import br.com.jm.musiclib.model.Comment;
+import br.com.jm.musiclib.model.Resposta;
 import br.com.jm.musiclib.model.Music;
 import br.com.jm.musiclib.model.converter.CommentConverter;
+import br.com.jm.musiclib.model.converter.Converter;
+import br.com.jm.musiclib.model.converter.RespostaConverter;
 import br.com.jm.musiclib.model.converter.MusicConverter;
 import br.com.jm.musiclib.model.converter.MusicFileConverter;
 
@@ -39,9 +42,11 @@ public class MusicServiceTest {
 		
 		
 		CommentConverter commentConv = new CommentConverter();
-		MusicConverter musicConv = new MusicConverter(commentConv);
+                RespostaConverter respostConv = new RespostaConverter();
+		MusicConverter musicConv = new MusicConverter((Converter<Comment>)commentConv, respostConv);
 
-		service.commentConv = commentConv;
+		service.commentConv = (Converter<Comment>) commentConv;
+                service.respostaConv = respostConv;
 		service.musicConv = musicConv;
 		service.musicFileConv = new MusicFileConverter();
 	}

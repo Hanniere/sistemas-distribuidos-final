@@ -16,7 +16,6 @@ import com.mongodb.gridfs.GridFS;
 
 /**
  * Classe que encapsula a obtenção das informações do MongoDB.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 @ApplicationScoped
 public class MongoProvider {
@@ -24,7 +23,7 @@ public class MongoProvider {
   /** Objeto que representa o banco de dados. */
   private DB db;
 
-  /** Objeto que representa a coleção de músicas. */
+  /** Objeto que representa a coleção de questões. */
   private DBCollection musicsColl;
 
   /** Objeto que representa a coleção de usuários. */
@@ -93,8 +92,8 @@ public class MongoProvider {
   }
 
   /**
-   * Produz objeto que representa a coleção de músicas.
-   * @return objeto que representa a coleção de músicas.
+   * Produz objeto que representa a coleção de questões.
+   * @return objeto que representa a coleção de questões.
    */
   @Produces @MusicCollection
   public DBCollection getMusicCollection() {

@@ -19,7 +19,6 @@ import com.mongodb.DBObject;
 
 /**
  * Implementação do Converter para objetos do tipo User.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 @ApplicationScoped
 public class UserConverter implements Converter<User> {

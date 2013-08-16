@@ -2,7 +2,6 @@ package br.com.jm.musiclib.model;
 
 /**
  * Interface de serviço contendo os métodos para manipulação de usuários.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 public interface UserService {
 

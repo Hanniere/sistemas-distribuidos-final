@@ -5,7 +5,6 @@ import com.mongodb.DBObject;
 /**
  * Interface genérica para conversão de/para objetos da aplicação e
  * documentos BSON manipulados pelo Mongo.
- * @author Paulo Sigrist / Wilson A. Higashino
  * 
  * @param <T> Tipo dos objetos sendo convertidos.
  */
@@ -26,3 +25,4 @@ public interface Converter<T> {
   public T toObject(DBObject doc);
 
 }
+

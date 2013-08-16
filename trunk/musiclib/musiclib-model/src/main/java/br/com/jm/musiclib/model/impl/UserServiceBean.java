@@ -19,7 +19,6 @@ import com.mongodb.WriteResult;
 
 /**
  * Implementação EJB do serviço de manipulação de usuários.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 @Stateless
 @Local(UserService.class)

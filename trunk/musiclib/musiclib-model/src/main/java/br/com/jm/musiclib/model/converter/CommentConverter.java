@@ -11,7 +11,6 @@ import br.com.jm.musiclib.model.Comment;
 
 /**
  * Implementação do Converter para objetos do tipo Comment.
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 @ApplicationScoped
 public class CommentConverter implements Converter<Comment> {

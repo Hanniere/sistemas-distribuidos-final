@@ -4,9 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Classe que representa um comentário das músicas.
+ * Classe que representa um comentário das perguntas.
  * 
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 public class Comment implements Comparable<Comment>, Serializable {
 
@@ -18,7 +17,7 @@ public class Comment implements Comparable<Comment>, Serializable {
   /** Data de postagem. */
   private Date postDate;
 
-  /** Nota dada para a música. */
+  /** Nota dada para a questão. */
   private double grade;
 
   /** Mensagem associada ao comentário. */
@@ -33,7 +32,7 @@ public class Comment implements Comparable<Comment>, Serializable {
    * @param date
    *            Data de postagem.
    * @param grade
-   *            Nota dada para a música.
+   *            Nota dada para a questão.
    * @param message
    *            Mensagem associada ao comentário.
    * @param userName
@@ -63,9 +62,9 @@ public class Comment implements Comparable<Comment>, Serializable {
   }
 
   /**
-   * Obtém nota dada para a música.
+   * Obtém nota dada para a questão.
    * 
-   * @return Nota dada para a música.
+   * @return Nota dada para a questão.
    */
   public double getGrade() {
     return grade;

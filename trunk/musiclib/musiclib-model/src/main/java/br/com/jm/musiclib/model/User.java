@@ -9,7 +9,6 @@ import java.util.Map;
 /**
  * Classe que representa um usuário da aplicação.
  * 
- * @author Paulo Sigrist / Wilson A. Higashino
  */
 public class User implements Serializable {
 
@@ -34,8 +33,8 @@ public class User implements Serializable {
   private List<Playlist> playlists;
 
   /**
-   * Map contendo o número de vezes que uma determinada música foi executada.
-   * A chave é o identificador da música, e o valor o número de vezes.
+   * Map contendo o número de vezes que uma determinada questão foi acessada.
+   * A chave é o identificador da questão, e o valor o número de vezes.
    */
   private Map<String, Integer> executions;
 
@@ -102,10 +101,10 @@ public class User implements Serializable {
   }
 
   /**
-   * Incremente o número de execuções de uma determinada música.
+   * Incremente o número de acessos de uma determinada questão.
    * 
    * @param musicaId
-   *            Música a ter o número de execuções incrementada.
+   *            questão a ter o número de execuções incrementada.
    */
   public void incExecution(String musicaId) {
     Integer qtd = executions.get(musicaId);
@@ -120,7 +119,7 @@ public class User implements Serializable {
    * Configura o identificador interno de um usuário.
    * 
    * @param id
-   *            Indeitificador interno.
+   *            Indentificador interno.
    */
   public void setId(String id) {
     this.id = id;
@@ -212,11 +211,11 @@ public class User implements Serializable {
   }
 
   /**
-   * Obtém map contendo o número de vezes que uma determinada música foi
-   * executada
+   * Obtém map contendo o número de vezes que uma determinada questão foi
+   * acessada
    * 
-   * @return map contendo o número de vezes que uma determinada música foi
-   *         executada
+   * @return map contendo o número de vezes que uma determinada questão foi
+   *         acessada
    */
   public Map<String, Integer> getExecutions() {
     return this.executions;

@@ -17,6 +17,7 @@ import org.bson.types.ObjectId;
 import br.com.jm.musiclib.indexer.MusicIndexerEvent;
 import br.com.jm.musiclib.indexer.MusicInfo;
 import br.com.jm.musiclib.model.Comment;
+import br.com.jm.musiclib.model.Resposta;
 import br.com.jm.musiclib.model.Music;
 import br.com.jm.musiclib.model.MusicFile;
 import br.com.jm.musiclib.model.MusicService;
@@ -32,8 +33,7 @@ import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSInputFile;
 
 /**
- * Implementação EJB do serviço de manipulação de músicas.
- * @author Paulo Sigrist / Wilson A. Higashino
+ * Implementação EJB do serviço de manipulação de questões.
  */
 @Stateless
 @Local(MusicService.class)
@@ -46,7 +46,7 @@ public class MusicServiceBean implements MusicService {
   @Inject
   protected GridFS musicsGridFS;
 
-  /** Coleção de músicas. */
+  /** Coleção de questões. */
   @Inject
   @MusicCollection
   protected DBCollection musicsColl;
@@ -58,6 +58,10 @@ public class MusicServiceBean implements MusicService {
   /** Conversor de objetos Comment. */
   @Inject
   protected Converter<Comment> commentConv;
+  
+  /** Conversor de objetos Resposta. */
+  @Inject
+  protected Converter<Resposta> respostaConv;
 
   /** Conversor de objetos MusicFile. */
   @Inject
@@ -110,6 +114,17 @@ public class MusicServiceBean implements MusicService {
     this.musicsColl.update(key, update);
 
   }
+  
+  /** {@inheritDoc} */
+  @Override
+  public void addResposta(Music music, Resposta comment) {
+    DBObject key = new BasicDBObject("_id", new ObjectId(music.getId()));
+    DBObject update = new BasicDBObject("$push", new BasicDBObject("respostas",
+        respostaConv.toDBObject(comment)));
+
+    this.musicsColl.update(key, update);
+
+  }
 
   /** {@inheritDoc} */
   @Override
@@ -150,8 +165,8 @@ public class MusicServiceBean implements MusicService {
   }
 
   /** 
-   * Persiste música no MongoDB.
-   * @param music Música a ser persistida.
+   * Persiste questão no MongoDB.
+   * @param music Questão a ser persistida.
    * @return Identificador do objeto criado pelo MongoDB.
    */
   protected String createMusic(Music music) {
