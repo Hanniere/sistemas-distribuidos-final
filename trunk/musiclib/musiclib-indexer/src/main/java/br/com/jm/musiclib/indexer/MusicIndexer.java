@@ -3,8 +3,7 @@ package br.com.jm.musiclib.indexer;
 import java.io.File;
 
 /**
- * Interface que define os métodos que um indexador de músicas deve implementar.
- * @author Paulo Sigrist / Wilson A. Higashino
+ * Interface que define os métodos que um indexador de questões deve implementar.
  *
  */
 public interface MusicIndexer {

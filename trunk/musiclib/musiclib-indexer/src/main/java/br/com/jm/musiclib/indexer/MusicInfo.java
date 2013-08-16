@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * Objeto que contém as informações extraidas dos arquivos mp3
  * 
- * @author Sigrist
  * 
  */
 public class MusicInfo implements Serializable {
@@ -16,22 +15,22 @@ public class MusicInfo implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/** ID único da música na coleção */
+	/** ID único da questão na coleção */
 	private Long id;
 	
-	/** Nome da música */
+	/** Nome da questão */
 	private String title;
 	
-	/** Nome do artista */
+	/** Nome do autor */
 	private String artist;
 	
-	/** Nome do album */
+	/** Nome do instituição */
 	private String album;
 	
-	/** Número da faixa */
+	/** Número da questão */
 	private String trackNumber;
 	
-	/** lista de tags associadas à música */
+	/** lista de tags associadas à questão */
 	private List<String> tags;
 	
 	/** Nome do arquivo com as informações extraídas */
