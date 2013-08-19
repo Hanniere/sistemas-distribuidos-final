@@ -102,13 +102,13 @@ public class MusicIndexerImpl implements MusicIndexer {
 
         Tag tag = f.getTag();
 
-        info.setAlbum(tag.getFirst(FieldKey.ALBUM));
-        info.setArtist(tag.getFirst(FieldKey.ARTIST));
-        info.setTitle(tag.getFirst(FieldKey.TITLE));
+        info.setInstituicao(tag.getFirst(FieldKey.ALBUM));
+        info.setAutor(tag.getFirst(FieldKey.ARTIST));
+        info.setAssunto(tag.getFirst(FieldKey.TITLE));
         try {
-          info.setTrackNumber(tag.getFirst(FieldKey.TRACK));
+          info.setPostagemNumber(tag.getFirst(FieldKey.TRACK));
         } catch (Throwable e) {
-          info.setTrackNumber("");
+          info.setPostagemNumber("");
         }
         info.addTag(tag.getFirst(FieldKey.GENRE));
 

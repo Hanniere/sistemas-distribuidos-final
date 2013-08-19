@@ -18,17 +18,17 @@ public class MusicInfo implements Serializable {
 	/** ID único da questão na coleção */
 	private Long id;
 	
-	/** Nome da questão */
-	private String title;
+	/** Assunto da questão */
+	private String assunto;
 	
 	/** Nome do autor */
-	private String artist;
+	private String autor;
 	
-	/** Nome do instituição */
-	private String album;
+	/** Nome da instituição */
+	private String instituicao;
 	
 	/** Número da questão */
-	private String trackNumber;
+	private String postagemNumber;
 	
 	/** lista de tags associadas à questão */
 	private List<String> tags;
@@ -81,63 +81,63 @@ public class MusicInfo implements Serializable {
 	}
 
 	/**
-	 * @return the title
+	 * @return the assunto
 	 */
-	public String getTitle() {
-		return title;
+	public String getAssunto() {
+		return assunto;
 	}
 
 	/**
-	 * @param title
-	 *            the title to set
+	 * @param assunto
+	 *            the assunto to set
 	 */
-	public void setTitle(String title) {
-		this.title = title;
+	public void setAssunto(String assunto) {
+		this.assunto = assunto;
 	}
 
 	/**
-	 * @return the artist
+	 * @return the autor
 	 */
-	public String getArtist() {
-		return artist;
+	public String getAutor() {
+		return autor;
 	}
 
 	/**
-	 * @param artist
-	 *            the artist to set
+	 * @param autor
+	 *            the autor to set
 	 */
-	public void setArtist(String artist) {
-		this.artist = artist;
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}
 
 	/**
-	 * @return the album
+	 * @return the instituicao
 	 */
-	public String getAlbum() {
-		return album;
+	public String getInstituicao() {
+		return instituicao;
 	}
 
 	/**
-	 * @param album
-	 *            the album to set
+	 * @param instituicao
+	 *            the instituicao to set
 	 */
-	public void setAlbum(String album) {
-		this.album = album;
+	public void setInstituicao(String instituicao) {
+		this.instituicao = instituicao;
 	}
 
 	/**
-	 * @return the trackNumber
+	 * @return the postagemNumber
 	 */
-	public String getTrackNumber() {
-		return trackNumber;
+	public String getPostagemNumber() {
+		return postagemNumber;
 	}
 
 	/**
-	 * @param trackNumber
-	 *            the trackNumber to set
+	 * @param postagemNumber
+	 *            the postagemNumber to set
 	 */
-	public void setTrackNumber(String trackNumber) {
-		this.trackNumber = trackNumber;
+	public void setPostagemNumber(String postagemNumber) {
+		this.postagemNumber = postagemNumber;
 	}
 
 	/**
