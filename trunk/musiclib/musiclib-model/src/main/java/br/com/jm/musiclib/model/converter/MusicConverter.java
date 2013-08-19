@@ -47,10 +47,10 @@ public class MusicConverter implements Converter<Music> {
   public DBObject toDBObject(Music music) {
     DBObject doc = new BasicDBObject();
 
-    doc.put("trackNumber", music.getTrackNumber());
-    doc.put("title", music.getTitle());
-    doc.put("artistName", music.getArtistName());
-    doc.put("albumName", music.getAlbumName());
+    doc.put("postagemNumber", music.getPostagemNumber());
+    doc.put("assunto", music.getAssunto());
+    doc.put("autor", music.getAutor());
+    doc.put("instituicao", music.getInstituicao());
 
     if (music.getFileId() != null) {
       doc.put("fileId", new ObjectId(music.getFileId()));
@@ -70,9 +70,9 @@ public class MusicConverter implements Converter<Music> {
     
     BasicDBList respostasList = new BasicDBList();
     for (Resposta comentario : music.getRespostas()) {
-      comentariosList.add(respostaConv.toDBObject(comentario));
+      respostasList.add(respostaConv.toDBObject(comentario));
     }
-    doc.put("respostas", comentariosList);
+    doc.put("respostas", respostasList);
 
     return doc;
   }
@@ -106,8 +106,8 @@ public class MusicConverter implements Converter<Music> {
     }
 
     Music music = new Music(((ObjectId) doc.get("_id")).toString(),
-        (Integer) doc.get("trackNumber"), (String) doc.get("title"),
-        (String) doc.get("artistName"), (String) doc.get("albumName"), fileId,
+        (Integer) doc.get("postagemNumber"), (String) doc.get("assunto"),
+        (String) doc.get("autor"), (String) doc.get("instituicao"), fileId,
         (List<String>) doc.get("tags"), comments, respostas);
 
     return music;

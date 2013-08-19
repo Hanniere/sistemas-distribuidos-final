@@ -148,14 +148,14 @@ public class MusicServiceBean implements MusicService {
 
       Integer trackId;
       try {
-        trackId = Integer.parseInt(info.getTrackNumber());
+        trackId = Integer.parseInt(info.getPostagemNumber());
       } catch (NumberFormatException ex) {
         trackId = 0;
       }
 
-      // cria música
-      Music music = new Music(trackId, info.getTitle(), info.getArtist(),
-          info.getAlbum(), fileId, genre);
+      // cria questão
+      Music music = new Music(trackId, info.getAssunto(), info.getAutor(),
+          info.getInstituicao(), fileId, genre);
       music.setId(this.createMusic(music));
 
       return music;
@@ -175,7 +175,7 @@ public class MusicServiceBean implements MusicService {
 
     WriteResult result = this.musicsColl.insert(doc);
     if (result.getError() != null) { throw new RuntimeException(
-        "Erro na inserção da Música"); }
+        "Erro na inserção da Questão"); }
 
     ObjectId id = (ObjectId) doc.get("_id");
     music.setId(id.toString());

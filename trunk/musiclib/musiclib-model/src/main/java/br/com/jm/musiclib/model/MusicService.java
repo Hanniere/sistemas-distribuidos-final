@@ -24,7 +24,7 @@ public interface MusicService {
   public List<Music> searchMusics(String search);
 
   /**
-   * Adiciona uma nova tag a música informada.
+   * Adiciona uma nova tag a questão informada.
    * @param music Questão sendo alterada.
    * @param tag Tag a ser adicionada.
    */
@@ -54,7 +54,7 @@ public interface MusicService {
   /**
    * Processa um evento gerado pelo componente indexer.
    * @param event Evento a ser processado.
-   * @return Música criada resultante do processamento do evento.
+   * @return Questão criada resultante do processamento do evento.
    */
   public Music processIndexerEvent(MusicIndexerEvent event);
 

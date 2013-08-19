@@ -20,17 +20,17 @@ public class Music implements Serializable {
   /** Identificador interno da questão. */
   private String id;
 
-  /** Número da questão. */
-  private int trackNumber;
+  /** Número da postagem. */
+  private int postagemNumber;
 
-  /** Nome da questão. */
-  private String title;
+  /** Assunto da questão. */
+  private String assunto;
 
   /** Autor da questão. */
-  private String artistName;
+  private String autor;
 
   /** Nome da instituição. */
-  private String albumName;
+  private String instituicao;
 
   /** Indentificador para o arquivo. */
   private String fileId;
@@ -46,17 +46,17 @@ public class Music implements Serializable {
 
   /**
    * Construtor.
-   * @param trackNumber Número da questão.
-   * @param title Nome da questão.
-   * @param artistName Nome do autor.
-   * @param albumName Nome da instituição.
+   * @param postagemNumber Número da questão.
+   * @param assunto Nome da questão.
+   * @param autor Nome do autor.
+   * @param instituicao Nome da instituição.
    * @param fileId Identificador para o arquivo.
    * @param tag Uma tag para a questão.
    */
-  public Music(int trackNumber, String title, String artistName,
-      String albumName, String fileId, String tag)
+  public Music(int postagemNumber, String assunto, String autor,
+      String instituicao, String fileId, String tag)
   {
-    this(null, trackNumber, title, artistName, albumName, fileId, Collections
+    this(null, postagemNumber, assunto, autor, instituicao, fileId, Collections
         .singletonList(tag), new TreeSet<Comment>(), new TreeSet<Resposta>());
   }
 
@@ -64,10 +64,10 @@ public class Music implements Serializable {
    * Construtor com todos os atributos.
    * 
    * @param id Identificador interno da questão.
-   * @param trackNumber Número da questão.
-   * @param title Nome da questão.
-   * @param artistName Nome do autor.
-   * @param albumName Nome da instituição.
+   * @param postagemNumber Número da questão.
+   * @param assunto Nome da questão.
+   * @param autor Nome do autor.
+   * @param instituicao Nome da instituição.
    * @param fileId Identificador para o arquivo.
    * @param tags Lista de tags associadas à questão.
    * @param comments Conjunto de comentários associados à questão.
@@ -78,10 +78,10 @@ public class Music implements Serializable {
       SortedSet<Comment> comments, SortedSet<Resposta> respostas)
   {
     this.id = id;
-    this.trackNumber = trackNumber;
-    this.title = title;
-    this.artistName = artistName;
-    this.albumName = albumName;
+    this.postagemNumber = trackNumber;
+    this.assunto = title;
+    this.autor = artistName;
+    this.instituicao = albumName;
     this.fileId = fileId;
     this.tags = new ArrayList<String>(tags);
     this.comments = comments;
@@ -100,32 +100,32 @@ public class Music implements Serializable {
    * Obtém número da questão.
    * @return número da questão.
    */
-  public int getTrackNumber() {
-    return trackNumber;
+  public int getPostagemNumber() {
+    return postagemNumber;
   }
 
   /**
    * Obtém título da questão.
    * @return Título da questão.
    */
-  public String getTitle() {
-    return this.title;
+  public String getAssunto() {
+    return this.assunto;
   }
 
   /**
    * Obtém nome da questão.
    * @return Nome da questão.
    */
-  public String getArtistName() {
-    return this.artistName;
+  public String getAutor() {
+    return this.autor;
   }
 
   /**
    * Obtém nome da instituição.
    * @return Nome da instituição.
    */
-  public String getAlbumName() {
-    return this.albumName;
+  public String getInstituicao() {
+    return this.instituicao;
   }
 
   /**

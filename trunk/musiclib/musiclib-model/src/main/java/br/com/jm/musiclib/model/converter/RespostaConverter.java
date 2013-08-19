@@ -20,7 +20,6 @@ public class RespostaConverter implements Converter<Resposta> {
   public DBObject toDBObject(Resposta comment) {
     DBObject doc = new BasicDBObject();
     doc.put("postDate", comment.getPostDate());
-    //doc.put("grade", comment.getGrade());
     doc.put("message", comment.getMessage());
     doc.put("userName", comment.getUserName());
 

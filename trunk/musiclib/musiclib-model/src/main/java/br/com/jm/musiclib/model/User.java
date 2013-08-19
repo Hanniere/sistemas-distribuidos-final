@@ -93,7 +93,7 @@ public class User implements Serializable {
    */
   public void addPlaylist(Playlist playlist) {
     this.playlists.add(playlist);
-    for (String musicId : playlist.getMusics()) {
+    for (String musicId : playlist.getAudios()) {
       if (!executions.containsKey(musicId)) {
         executions.put(musicId, 0);
       }

@@ -18,7 +18,7 @@ public class Playlist implements Serializable {
   private String name;
 
   /** Lista de identificadores de questões pertencentes à playlist. */
-  private List<String> musics;
+  private List<String> audios;
 
   /**
    * Construtor.
@@ -31,20 +31,20 @@ public class Playlist implements Serializable {
   /**
    * Construtor.
    * @param name Nome da playlist.
-   * @param musics Lista de identificadores das questões que pertencem
+   * @param audios Lista de identificadores das questões que pertencem
    * à playlist.
    */
-  public Playlist(String name, List<String> musics) {
+  public Playlist(String name, List<String> audios) {
     this.name = name;
-    this.musics = musics;
+    this.audios = audios;
   }
 
   /**
    * Obtém a lista de identificadres das questões da playlist.
    * @return lista de identificadres das questões da playlist.
    */
-  public List<String> getMusics() {
-    return this.musics;
+  public List<String> getAudios() {
+    return this.audios;
   }
 
   /**
@@ -60,7 +60,7 @@ public class Playlist implements Serializable {
    * @param music Questão a ser adicionada.
    */
   public void addMusic(Music music) {
-    this.musics.add(music.getId());
+    this.audios.add(music.getId());
   }
 
 }

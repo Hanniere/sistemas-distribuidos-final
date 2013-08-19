@@ -24,9 +24,9 @@ public interface UserService {
   public void update(User user);
 
   /**
-   * Contabiliza a execução de uma música.
-   * @param user Usuário que executou a música.
-   * @param music Música que foi executada.
+   * Contabiliza a execução de uma questão.
+   * @param user Usuário que executou a questão.
+   * @param music Áudio que foi executado.
    */
   public void play(User user, Music music);
 

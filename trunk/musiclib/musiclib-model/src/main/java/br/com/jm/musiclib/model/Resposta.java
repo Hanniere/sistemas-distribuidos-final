@@ -17,9 +17,6 @@ public class Resposta implements Comparable<Resposta>, Serializable {
   /** Data de postagem. */
   private Date postDate;
 
-  /** Nota dada para a questão. */
-  //private double grade;
-
   /** Mensagem associada a resposta. */
   private String message;
 
@@ -38,7 +35,6 @@ public class Resposta implements Comparable<Resposta>, Serializable {
    */
   public Resposta(Date date, String message, String userName) {
     this.postDate = date;
-    //this.grade = grade;
     this.message = message;
     this.userName = userName;
   }

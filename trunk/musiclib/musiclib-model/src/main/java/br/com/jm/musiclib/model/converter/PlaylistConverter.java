@@ -25,7 +25,7 @@ public class PlaylistConverter implements Converter<Playlist> {
     doc.put("name", playlist.getName());
 
     List<ObjectId> musicIds = new ArrayList<ObjectId>();
-    for (String music : playlist.getMusics()) {
+    for (String music : playlist.getAudios()) {
       musicIds.add(new ObjectId(music));
     }
     doc.put("musics", musicIds);
