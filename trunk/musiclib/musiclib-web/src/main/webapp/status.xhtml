@@ -17,14 +17,14 @@
 	<p:panel header="Status">
 		Aguarde enquanto indexamos suas músicas. Assim que o processo for finalizado, voce será redirecionado.
 		<h:form>
-			Título: <h:outputText id="title" value="#{ajaxStatusBean.title}" />
+			Título: <h:outputText id="title" value="#{ajaxStatusBean.assunto}" />
 			<br />
-			Artista: <h:outputText id="artist" value="#{ajaxStatusBean.artist}" />
+			Artista: <h:outputText id="artist" value="#{ajaxStatusBean.autor}" />
 			<br />
-			Album: <h:outputText id="album" value="#{ajaxStatusBean.album}" />
+			Album: <h:outputText id="album" value="#{ajaxStatusBean.instituicao}" />
 			<br />
 			Track NUmber: <h:outputText id="trackNumber"
-				value="#{ajaxStatusBean.trackNumber}" />
+				value="#{ajaxStatusBean.postagemNumber}" />
 			<br />
 			Arquivo: <h:outputText id="fileName"
 				value="#{ajaxStatusBean.fileName}" />

@@ -47,7 +47,7 @@ public class Player implements Serializable {
   private UserBean user;
 
   /**
-   * Posição atual da música que está sendo tocada.
+   * Posição atual da questão que está sendo tocada.
    */
   private int currentIndex = 0;
 
@@ -111,7 +111,7 @@ public class Player implements Serializable {
 
   /**
    * 
-   * @return a lista de músicas da playlist selecionada ou lista vazia caso
+   * @return a lista de questões da playlist selecionada ou lista vazia caso
    *         não exista nenhuma playlist selecionada.
    * 
    */
@@ -135,7 +135,7 @@ public class Player implements Serializable {
       }
 
       musics = new ArrayList<Music>();
-      for (String musicId : currentPlaylist.getMusics()) {
+      for (String musicId : currentPlaylist.getAudios()) {
         musics.add(musicService.getMusic(musicId));
       }
       updateCurrentMusic();

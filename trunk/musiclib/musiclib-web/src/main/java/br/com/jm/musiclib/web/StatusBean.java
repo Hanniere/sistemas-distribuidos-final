@@ -63,24 +63,24 @@ public class StatusBean implements Serializable {
   }
 
   /**
-   * @return o título da questão atual ou vazio se não existe
+   * @return o assunto da questão atual ou vazio se não existe
    */
-  public String getTitle() {
-    return currentMusicInfo == null ? "" : currentMusicInfo.getTitle();
+  public String getAssunto() {
+    return currentMusicInfo == null ? "" : currentMusicInfo.getAssunto();
   }
 
   /**
    * @return o autor da questão atual ou vazio se não existe
    */
-  public String getArtist() {
-    return currentMusicInfo == null ? "" : currentMusicInfo.getArtist();
+  public String getAutor() {
+    return currentMusicInfo == null ? "" : currentMusicInfo.getAutor();
   }
 
   /**
    * @return o a instituição do autor da questão atual ou vazio se não existe
    */
-  public String getAlbum() {
-    return currentMusicInfo == null ? "" : currentMusicInfo.getAlbum();
+  public String getInstituicao() {
+    return currentMusicInfo == null ? "" : currentMusicInfo.getInstituicao();
   }
 
   /**
@@ -93,8 +93,8 @@ public class StatusBean implements Serializable {
   /**
    * @return a faixa da questão atual ou vazio se não existe
    */
-  public String getTrackNumber() {
-    return currentMusicInfo == null ? "" : currentMusicInfo.getTrackNumber();
+  public String getPostagemNumber() {
+    return currentMusicInfo == null ? "" : currentMusicInfo.getPostagemNumber();
   }
 
   /**
