@@ -10,12 +10,16 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
 import br.com.jm.musiclib.indexer.MusicIndexer;
+import javax.ejb.ActivationConfigProperty;
 
 /**
  * Message-Driven Bean que inicia o processo de indexação.
  * 
  */
-@MessageDriven(mappedName = "jms/musicIndexerQueue")
+@MessageDriven(mappedName = "jms/musicIndexerQueue", activationConfig = {
+    @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
+    @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue")
+})
 public class MusicIndexerMessageBean implements MessageListener {
   /** Log */
   private Logger log = Logger.getLogger("br.com.jm.musiclib.indexer");
