@@ -41,7 +41,7 @@ public class MusicIndexerMessageBean implements MessageListener {
 
     if (message instanceof TextMessage) {
       TextMessage textMessage = (TextMessage) message;
-
+      
       try {
         folder = textMessage.getText();
       } catch (JMSException e) {

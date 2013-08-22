@@ -37,7 +37,7 @@ import br.com.jm.musiclib.indexer.MusicInfo;
  */
 @Named
 @Stateless
-public class MusicIndexerImpl implements MusicIndexer {
+public class MusicIndexerImplementacao implements MusicIndexer {
   /** Log */
   private Logger log = Logger.getLogger("br.com.jm.musiclib.indexer");
 
