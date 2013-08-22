@@ -82,7 +82,7 @@ public class MusicServiceBean implements MusicService {
     // constrói a expressão regular e a utiliza como valor para title
     Pattern searchPattern = Pattern.compile(".*" + search + ".*",
         Pattern.CASE_INSENSITIVE);
-    titleQueryDoc.put("title", searchPattern);
+    titleQueryDoc.put("assunto", searchPattern);
 
     List<Music> musics = new ArrayList<Music>();
 
