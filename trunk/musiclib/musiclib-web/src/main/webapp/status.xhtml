@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ml="http://musiclib.googlecode.com">
+
+<h:head>
+	<title>Musiclib : Status</title>
+</h:head>
+
+<h:body>
+	<ml:menu id="menu" />
+	<p:panel header="Status">
+		Aguarde enquanto indexamos seus audios. Assim que o processo for finalizado, voce será redirecionado.
+		<h:form>
+			Assunto: <h:outputText id="assunto" value="#{ajaxStatusBean.assunto}" />
+			<br />
+			Autor: <h:outputText id="autor" value="#{ajaxStatusBean.autor}" />
+			<br />
+			Instituicao: <h:outputText id="instituicao" value="#{ajaxStatusBean.instituicao}" />
+			<br />
+			Numero da postagem: <h:outputText id="postagemNumber"
+				value="#{ajaxStatusBean.postagemNumber}" />
+			<br />
+			Arquivo: <h:outputText id="fileName"
+				value="#{ajaxStatusBean.fileName}" />
+			<br />
+
+			<p:poll interval="1" listener="#{ajaxStatusBean.updateStatus}"
+				update="assunto, autor, instituicao, fileName, postagemNumber" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>
