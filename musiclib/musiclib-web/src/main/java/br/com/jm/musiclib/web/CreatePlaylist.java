@@ -67,7 +67,13 @@ public class CreatePlaylist implements Serializable {
    * @return redirecionamento para a página de criação de playlist.
    */
   public String start() {
-    conv.begin();
+	if (conv.isTransient()) {
+		conv.begin();
+	} else {
+		conv.end();
+		conv.begin();
+	}
+    
 
     selectedMusics = new ArrayList<Music>();
     searchResults = new ArrayList<Music>();
